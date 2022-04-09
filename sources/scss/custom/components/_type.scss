@@ -1,0 +1,286 @@
+/** @section Typography */
+
+// Body
+body {
+	font-size: $font-size-body;
+	-webkit-text-size-adjust: none;
+	-webkit-font-smoothing: subpixel-antialiased;
+}
+
+// Headings
+#{headings()} {
+	margin-bottom: 0;
+	font-family: $headings-font-family;
+	font-weight: $headings-font-weight;
+	color: $headings-color;
+
+	a {
+		color: inherit;
+
+		&:hover { color: $primary; }
+	}
+
+	.bg-primary-3 & {
+		a:hover {
+			color: inherit;
+			text-decoration: underline;
+		}
+	}
+}
+
+h1,
+.heading-1 {
+	font-size: 32px;
+	line-height: $h1-line-height;
+
+	@include media-breakpoint-up(sm) {
+		font-size: 40px;
+	}
+
+	@include media-breakpoint-up(md) {
+		font-size: 45px;
+	}
+
+	@include media-breakpoint-up(lg) {
+		font-size: 50px;
+	}
+
+	@include media-breakpoint-up(xl) {
+		font-size: 55px;
+	}
+
+	@include media-breakpoint-up(xxl) {
+		font-size: $h1-font-size;
+	}
+}
+
+h2,
+.heading-2 {
+	font-size: 24px;
+	line-height: $h2-line-height;
+
+	@include media-breakpoint-up(lg) {
+		font-size: $h2-font-size;
+	}
+}
+
+h3,
+.heading-3 {
+	font-size: 22px;
+	line-height: $h3-line-height;
+
+	@include media-breakpoint-up(lg) {
+		font-size: $h3-font-size;
+	}
+}
+
+h4,
+.heading-4 {
+	font-size: 20px;
+	line-height: $h4-line-height;
+
+	@include media-breakpoint-up(lg) {
+		font-size: $h4-font-size;
+	}
+}
+
+h5,
+.heading-5 {
+	font-size: $h5-font-size;
+	line-height: $h5-line-height;
+}
+
+h6,
+.heading-6 {
+	font-family: $font-family-base;
+	font-size: $h6-font-size;
+	line-height: $h6-line-height;
+	color: $primary;
+
+	a {
+		color: inherit;
+
+		&:hover { color: $secondary; }
+	}
+}
+
+.heading-7 {
+	font-size: 50px;
+	line-height: 1.1;
+	color: $primary;
+
+	@include media-breakpoint-up(sm) {
+		font-size: 60px;
+	}
+
+	@include media-breakpoint-up(md) {
+		font-size: 70px;
+	}
+
+	@include media-breakpoint-up(lg) {
+		font-size: 90px;
+	}
+
+	@include media-breakpoint-up(xl) {
+		font-size: 110px;
+	}
+}
+
+.heading-7 + h3 { margin-top: 5px; }
+
+// heading 8
+.heading-8 {
+	font-size: 18px;
+	line-height: 1.6;
+	color: $secondary;
+
+	a:hover {
+		color: $primary;
+	}
+
+	@include media-breakpoint-up(lg) {
+		font-size: 20px;
+	}
+}
+
+// Emphasis
+small,
+.small {
+	display: block;
+	font-size: $font-size-body-sm;
+	line-height: $line-height-sm;
+}
+
+mark,
+.mark {
+	padding: 3px 5px;
+	color: $white;
+	background: $primary;
+}
+
+// Big text
+.big {
+	font-size: 18px;
+	line-height: $line-height-lg;
+
+	@include media-breakpoint-up(lg) {
+		font-size: $font-size-body-lg;
+	}
+}
+
+.lead {
+	font-size: $lead-font-size;
+	line-height: $lead-line-height;
+	font-weight: $lead-font-weight;
+}
+
+code {
+	padding: $code-padding-y $code-padding-x;
+	border-radius: $border-radius-sm;
+	font-size: $code-font-size;
+	color: $code-color;
+	background: $code-bg;
+}
+
+// Paragraph
+p {
+	[data-toggle='tooltip'] {
+		padding-left: .25em;
+		padding-right: .25em;
+		color: $primary;
+	}
+
+	[style*='max-width'] { display: inline-block; }
+}
+
+// Selection
+::selection {
+	background: $primary;
+	color: $white;
+}
+
+::-moz-selection {
+	background: $primary;
+	color: $white;
+}
+
+html:not([data-x-mode='true']) {
+	.bg-primary {
+		::selection {
+			background: $secondary;
+		}
+
+		::-moz-selection {
+			background: $secondary;
+		}
+	}
+}
+
+
+// Custom Title Styles
+
+// title 1
+@include media-breakpoint-between(md, md) {
+	.title-1 {
+		font-size: 32px;
+	}
+}
+
+// title 2
+.title-2 {
+	font-style: italic;
+	color: $gray-3;
+}
+
+* + .title-2 { margin-top: 30px; }
+
+@include media-breakpoint-up(md) {
+	* + .title-2 { margin-top: 50px; }
+}
+
+// title 3
+.title-3 {
+	color: $secondary;
+}
+
+// title 4
+
+// Context styling
+%context-dark {
+	.title-4 {
+		color: $primary;
+	}
+}
+
+// title 5
+.title-5 {
+	font-weight: 400;
+	color: $secondary;
+}
+
+@include media-breakpoint-up(lg) {
+	h1 + .title-5 { margin-top: 30px; }
+}
+
+.title-christmas {
+	span {
+		position: relative;
+
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			transform: translate(-47.7%, -35.2%);
+			max-width: 190%;
+
+			@include media-breakpoint-up(sm) {
+				max-width: 245%;
+			}
+
+			// Mega large ≥ 1600px
+			@include media-breakpoint-up(xxl) {
+				max-width: none;
+			}
+		}
+	}
+}

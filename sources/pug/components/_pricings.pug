@@ -1,0 +1,15 @@
+//- Pricing Classic
+mixin pricing-classic( obj )
+	// Pricing Classic
+	.pricing-classic.novi-bg
+		h4.pricing-classic-title= obj.title
+		.pricing-classic-price.heading-1
+			.pricing-classic-currency $
+			.pricing-classic-numeric= obj.price
+		ul.pricing-classic-list.big
+			each item in obj.items
+				li.pricing-classic-list-item
+					+check-icon-classic
+					span= item
+		a.button.button-white.button-width-3.button-nuka( href='#' ) Book Now!
+			span.button-overlay

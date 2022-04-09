@@ -1,0 +1,401 @@
+/** @section Services */
+
+
+// Service App
+.service-app-list {
+}
+
+* + .service-app-list {
+	margin-top: 30px;
+
+	// Extra large ≥ 1200px
+	@include media-breakpoint-up(xl) {
+		margin-top: 47px;
+	}
+}
+
+.service-app-list + * {
+	margin-top: 30px;
+
+	// Extra large ≥ 1200px
+	@include media-breakpoint-up(xl) {
+		margin-top: 53px;
+	}
+}
+
+.service-app-item {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	max-width: 390px;
+
+	// Medium ≥ 576px
+	@include media-breakpoint-up(sm) {
+		flex-direction: row;
+		align-items: center;
+
+		&:not(:last-of-type) {
+			&::before {
+				content: '';
+				position: absolute;
+				width: 1px;
+				top: 50px;
+				bottom: -100px;
+				left: 40px;
+				background-color: $gray-100;
+			}
+		}
+	}
+}
+
+* + .service-app-item {
+	margin-top: 30px;
+
+	// Extra large ≥ 1200px
+	@include media-breakpoint-up(xl) {
+		margin-top: 42px;
+	}
+}
+
+.service-app-icon {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	width: 80px;
+	height: 80px;
+	border-radius: 80px;
+	background-color: $gray-100;
+
+	svg {
+		width: 50px;
+		height: 50px;
+	}
+}
+
+* + .service-app-body {
+	margin-top: 15px;
+
+	// Medium ≥ 576px
+	@include media-breakpoint-up(sm) {
+		margin-top: 0;
+		margin-left: 30px;
+	}
+}
+
+.service-app-text {
+
+}
+
+* + .service-app-text {
+	margin-top: 9px;
+}
+
+
+// Service Corporate
+.service-corporate {
+
+}
+
+.service-corporate-1 {
+	* + .service-corporate-text { margin-top: 24px; }
+}
+
+.service-corporate-icon {
+	.path-primary {
+		fill: $primary
+	}
+
+	.path-secondary {
+		fill: $secondary;
+	}
+
+	.path-gray-700 {
+		fill: $gray-700;
+	}
+}
+
+.service-corporate-title {
+
+	// Medium ≥ 576px
+	@include media-breakpoint-up(sm) {
+		margin-top: 17px;
+	}
+}
+
+.service-corporate-icon + .service-corporate-title { margin-top: 26px; }
+
+@include media-breakpoint-up(lg) {
+	.service-corporate-2 {
+		* + .service-corporate-title { margin-top: 38px; }
+	} 
+}
+
+
+
+//
+// Service modern
+//
+
+.service-modern {
+	padding: 30px 20px;
+	background: $white;
+	box-shadow: $shadow-2;
+	transition: .3s ease;
+}
+
+.service-modern-icon {
+	.path-primary {
+		fill: $primary
+	}
+
+	.path-secondary {
+		fill: $secondary;
+	}
+}
+
+// Offset
+* + .service-modern-title { margin-top: 20px; }
+
+// Media
+@include media-breakpoint-up(lg) {
+
+	.service-modern {
+		padding: 30px 40px 65px;
+	}
+
+  .desktop {
+		.service-modern:hover {
+			box-shadow: 0 17px 36px rgba($gray-700, 0.13);
+			transform: translateY(-20px);
+		}
+	}
+}
+
+
+
+//
+// Program
+//
+.program {
+	text-align: left;
+	padding: 35px 15px;
+	background: $white;
+	box-shadow: 0 10px 15px rgba($gray-700, 0.08);
+}
+
+.program-day {
+	> * {
+		color: $secondary;
+	}
+}
+
+.program-title {
+	margin-top: 10px;
+}
+
+* + .program-month { margin-top: 5px; }
+* + .program-list { margin-top: 18px; }
+
+@include media-breakpoint-down(sm) {
+	.program-info {
+		@include group( 15px, 10px );
+
+		> * {
+			display: inline-block;
+		}
+	}
+}
+
+@include media-breakpoint-up(sm) {
+	.program {
+		box-shadow: 0 25px 90px rgba($gray-700, 0.08);
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.program {
+		padding: 4.84% 2.94% 5.44% 3.94%;
+	}
+
+	.program-left {
+		position: relative;
+
+		&::before {
+			position: absolute;
+			content: '';
+			top: 50%;
+			right: 6%;
+			width: 0;
+			height: 86.6%;
+			border-left: 1px solid $gray-4;
+			transform: translateY(-50%);
+		}
+	}
+
+	* + .program-time { margin-top: 35px; }
+}
+
+@include media-breakpoint-up(lg) {
+	* + .program-time { margin-top: 50px; } 
+}
+
+@include media-breakpoint-up(xl) {
+	* + .program-time { margin-top: 64px; } 
+}
+
+/*
+ Service Classic
+ */
+.service-classic {
+	border-radius: 8px;
+	overflow: hidden;
+	max-width: 390px;
+	margin-left: auto;
+	margin-right: auto;
+	&.service-classic-white {
+		background: $white;
+		box-shadow: 0 28px 34px rgba($secondary, 0.1);
+	}
+	&.service-classic-inset {
+		padding: 20px 20px 40px;
+	}
+	&.service-classic-transparent {
+		padding-bottom: 0;
+		padding-top: 0;
+	}
+}
+
+.service-classic-content {
+	max-width: 310px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.service-classic-text {
+	font-size: 16px;
+}
+
+.service-classic-title {
+	&:before {
+		content: '';
+		display: inline-block;
+		width: 18px;
+		height: 14px;
+		margin-right: 10px;
+		background-image: url("data:image/svg+xml,%3Csvg width='18' height='14' viewBox='0 0 18 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18 2.1L15.931 0L6.27586 9.8L2.06897 5.5L0 7.6L6.27586 14L18 2.1Z' fill='%233F46AE'/%3E%3C/svg%3E%0A");
+	}
+}
+
+* + .service-classic-text {
+	margin-top: 10px;
+}
+
+@include media-breakpoint-up(lg) {
+	.service-classic-text {
+		font-size: 20px;
+	}
+
+	* + .service-classic-text {
+		margin-top: 15px;
+	}
+
+}
+
+@include media-breakpoint-up(xl) {
+	.service-classic {
+		&.service-classic-inset {
+			padding: 32px 40px 65px;
+		}
+		&.service-classic-transparent {
+			padding-bottom: 0;
+			padding-top: 0;
+		}
+	}
+}
+
+
+
+// Service ubby
+.service-ubby {
+
+}
+
+.service-ubby-icon {
+	.path-primary {
+		fill: $primary-8;
+	}
+
+	.path-secondary {
+		fill: rgba($secondary, .5);
+	}
+}
+
+.service-ubby-title {
+	color: $secondary;
+	font-weight: 400;
+}
+
+* + .service-ubby-title { margin-top: 20px; }
+
+@include media-breakpoint-up(lg) {
+	* + .service-ubby-title { margin-top: 36px; } 
+}
+
+
+
+// Service alba
+.service-alba {
+	text-align: left;
+	overflow: hidden;
+	background: $white;
+	border-radius: $border-radius-md;
+	box-shadow: $shadow-1;
+}
+
+.service-alba-body {
+	padding: 30px 20px;
+}
+
+.service-alba-title {
+	color: $secondary;
+}
+
+@include media-breakpoint-up(lg) {
+	.service-alba-body {
+		padding: 35px 30px 50px;
+	}
+}
+
+@include media-breakpoint-up(xxl) {
+	.service-alba-body {
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+}
+
+// Context styling
+.owl-item {
+	&:nth-child( 4n + 1 ) {
+		.service-alba {
+			color: $white;
+			background: $primary;
+		}
+
+		.service-alba-title {
+			color: $white;
+		}
+	}
+
+	&:nth-child( 4n - 1 ) {
+		.service-alba {
+			color: $white;
+			background: $gray-700;
+		}
+
+		.service-alba-title {
+			color: $white;
+		}
+	}
+}

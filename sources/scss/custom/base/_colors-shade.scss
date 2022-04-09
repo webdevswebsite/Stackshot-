@@ -1,0 +1,14 @@
+// Colors shade
+
+$primary-1:     lighten(desaturate(adjust_hue($primary, 15.820327868852445), 0.7617950195249961%), 1.5686274509803937%); // #028DFC
+$primary-2:     lighten(saturate(adjust_hue($primary, 10.676390860978444), 0.8130081300813004%), 1.9607843137254903%); // #01A4FF
+$primary-4:     darken(saturate(adjust_hue($primary-3, 21.84723067559342), 0%), 7.058823529411775%);
+$primary-6:     darken(desaturate(adjust_hue($primary, 0.8803278688524756), 7.443872603863653%), 5.490196078431374%)!default; //#09AAD1
+$primary-7:     lighten(desaturate(adjust_hue($primary, 14.95121951219516), 9.090909090909065%), 19.803921568627445%); // #FEF5EA
+$primary-8:     lighten(desaturate(adjust_hue($primary, 13.451219512195124), 4.761904761904745%), 7.64705882352942%); // #FDD7AD
+
+$secondary-1:   darken(desaturate(adjust_hue($secondary, 0.17224880382772767), 7.111111111111114%), 5.882352941176471%) !default; // #085BD9
+$secondary-2:   darken(desaturate(adjust_hue($secondary, 0), 9.448818897637807%), 0.19607843137254832%)!default; // #0C68F2
+$secondary-3:   lighten(desaturate(adjust_hue($secondary, 100.9230769230769), 18.4100418410042%), 3.1372549019607874%); // #E926B2
+$secondary-4:   lighten(desaturate(adjust_hue($secondary, 80.53179190751445), 18.009478672985765%), 8.627450980392162%); // #E23FEC
+$secondary-5:   lighten(desaturate(adjust_hue($secondary, 2.01680672268904), 7.037037037037024%), 47.64705882352941%);; //#E9F7FA

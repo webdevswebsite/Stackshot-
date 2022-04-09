@@ -1,0 +1,59 @@
+mixin quote-classic( obj )
+	.quote-classic
+		.quote-classic-body
+			q= obj.text
+		.quote-classic-footer.unit.unit-spacing-md
+			.unit-left
+				+img( obj.img ).quote-classic-photo.rounded-circle
+			.unit-body
+				.quote-classic-name= obj.name
+				.quote-classic-position= obj.position
+
+mixin quote-corporate( obj )
+	.quote-corporate.novi-bg&attributes( attributes )
+		.quote-corporate-body
+			q(class=obj.headingClass ? obj.headingClass : 'heading-5')= obj.text
+		.quote-corporate-footer.unit.unit-spacing-md
+			.unit-left
+				+img( obj.img ).quote-corporate-photo.rounded-circle
+			.unit-body
+				.quote-corporate-name= obj.name
+				.quote-corporate-position= obj.position ? obj.position : 'Regular client'
+
+mixin quote-modern ( obj )
+	.quote-modern.novi-bg&attributes( attributes )
+		.quote-modern-head
+			ul.list-rate.list-inline
+				li
+					svg(width='30', height='28', viewBox='0 0 30 28', fill='none')
+						path(d='M15 0L18.3677 10.3647H29.2658L20.4491 16.7705L23.8168 27.1353L15 20.7295L6.18322 27.1353L9.55093 16.7705L0.734152 10.3647H11.6323L15 0Z', fill='#FF9C07')
+				li
+					svg(width='30', height='28', viewBox='0 0 30 28', fill='none')
+						path(d='M15 0L18.3677 10.3647H29.2658L20.4491 16.7705L23.8168 27.1353L15 20.7295L6.18322 27.1353L9.55093 16.7705L0.734152 10.3647H11.6323L15 0Z', fill='#FF9C07')
+				li
+					svg(width='30', height='28', viewBox='0 0 30 28', fill='none')
+						path(d='M15 0L18.3677 10.3647H29.2658L20.4491 16.7705L23.8168 27.1353L15 20.7295L6.18322 27.1353L9.55093 16.7705L0.734152 10.3647H11.6323L15 0Z', fill='#FF9C07')
+				li
+					svg(width='30', height='28', viewBox='0 0 30 28', fill='none')
+						path(d='M15 0L18.3677 10.3647H29.2658L20.4491 16.7705L23.8168 27.1353L15 20.7295L6.18322 27.1353L9.55093 16.7705L0.734152 10.3647H11.6323L15 0Z', fill='#FF9C07')
+				li
+					svg(width='30', height='28', viewBox='0 0 30 28', fill='none')
+						path(d='M15 0L18.3677 10.3647H29.2658L20.4491 16.7705L23.8168 27.1353L15 20.7295L6.18322 27.1353L9.55093 16.7705L0.734152 10.3647H11.6323L15 0Z', fill='#FF9C07')
+		.quote-modern-body
+			q(class=obj.headingClass ? obj.headingClass : 'heading-6')= obj.text
+		.quote-modern-footer.unit.unit-spacing-xs
+			.unit-left: span.quote-modern-author=obj.author? obj.author : 'Adam Smith'
+			.unti-body: span.quote-modern-date=obj.date ? obj.date : 'October 8, 2019'
+
+mixin quote-christmas( obj )
+	.quote-christmas
+		.quote-christmas-body
+			q.heading-6= obj.text
+			+icon-quote-christmas
+		.quote-christmas-footer
+			.unit.unit-spacing-md.align-items-center
+				.unit-left
+					+img( obj.img ).quote-christmas-image
+				.unit-body
+					h6.quote-christmas-name= obj.name
+					.quote-christmas-date.small= obj.date

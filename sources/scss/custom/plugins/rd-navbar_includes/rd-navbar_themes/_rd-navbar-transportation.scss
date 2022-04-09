@@ -1,0 +1,66 @@
+// navbar transportation
+.rd-navbar-transportation {
+	position: relative;
+	
+	.rd-navbar-fixed{
+		.rd-navbar-search-form-input {
+			background: $white;
+			border-radius: 0;
+			border: none;
+		}
+	}
+
+	.rd-nav-item {
+		.rd-nav-link {
+			color: $gray-900;
+		}
+
+		&.active,
+		&.opened {
+			.rd-nav-link {
+				color: $gray-900;
+			}
+
+			> .rd-navbar-submenu-toggle { color: $gray-900; }
+		}
+	}
+
+	.rd-navbar-static {
+		.rd-navbar-brand {
+			display: flex;
+			
+			* + .rd-navbar-brand-subtitle {
+				margin-left: 20px;
+			}
+		}
+		
+		.rd-nav-item {
+			&.active,
+			&.opened {
+				.rd-nav-link {
+					color: $primary;
+				}
+			}
+		}
+		.rd-nav-link:hover {
+			color: $primary;
+		}
+	}
+
+	.rd-nav-link {
+		font-size: 17px;
+	}
+
+	.rd-navbar-brand-subtitle {
+		display: none;
+		margin-top: 0;
+		padding: 10px 19px;
+		font-size: 15px;
+		line-height: 20px;
+		border-left: 1px solid $gray-200;
+		
+		@include media-breakpoint-up( xxl ){
+			display: block;
+		}
+	}
+}

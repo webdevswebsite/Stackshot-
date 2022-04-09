@@ -1,0 +1,202 @@
+// Theme variables
+
+// Accent colors
+$primary: #0077FF;
+$primary-3: $primary;
+$primary-5: $primary;
+
+// Gray colors
+$gray-100: #F7F6F9;
+$gray-500: #777777;
+$gray-700: #293043;
+$gray-900: #111111;
+
+$gray-7: #E7E7E7;
+
+$secondary: $primary;
+
+// Fonts
+$font-family-sans-serif: "Heebo", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+$font-family-sec: $font-family-sans-serif;
+
+$font-size-body: 18px;
+$_lh-base: 29px;
+
+$font-size-body-lg: 22px;
+$_lh-body-lg: 35px;
+
+// Headings
+$headings-font-weight: 500;
+$headings-color: $gray-900;
+
+// Buttons
+$btn-font-weight: 500;
+$button-padding-y: 19px;
+$button-padding-x: 38px;
+$button-font-size: 18px;
+$button-line-height: 18px;
+
+// Template Heading Values
+$_h1-fsz: 72;
+$_h2-fsz: 54;
+$_h3-fsz: 46;
+$_h4-fsz: 36;
+$_h5-fsz: 28;
+$_h6-fsz: 22;
+
+$_h2-lh: 79;
+$_h2-lh: 59;
+$_h3-lh: 51;
+$_h4-lh: 40;
+$_h5-lh: 31;
+$_h6-lh: 35;
+
+// Hr
+$hr-border-color: $gray-7;
+
+// Border radius
+$border-radius-1: 6px;
+
+//Forms
+$form-input-height: 60px;
+$form-input-border-radius: 8px;
+$form-input-font-weight: 500;
+
+$form-input-padding-horizontal: 28px;
+$form-input-color-placeholder: $gray-900;
+
+// Import main styles
+@import 'main';
+
+// Specific theme styles
+body {
+	font-size: 16px;
+	line-height: 1.4em;
+	@include media-breakpoint-up(lg) {
+		font-size: $font-size-body;
+		line-height: $_lh-base / $font-size-body;
+	}
+}
+
+// Container
+.container {
+	@include media-breakpoint-up(xxl) {
+		max-width: $container-custom-max-width;
+	}
+}
+
+// Headings
+#{headings()} {
+	letter-spacing: -0.02em;
+}
+
+h2,
+.heading-2 {
+	font-weight: 800;
+	font-size: 26px;
+	@include media-breakpoint-up(lg) {
+		font-size: $_h2-fsz * 1px;
+	}
+}
+
+h3,
+.heading-3 {
+	font-size: 24px;
+	@include media-breakpoint-up(lg) {
+		font-size: $_h3-fsz * 1px;
+	}
+}
+
+h4,
+.heading-4 {
+	font-size: 22px;
+	@include media-breakpoint-up(lg) {
+		font-size: $_h4-fsz * 1px;
+	}
+}
+
+h6,
+.heading-6 {
+	color: $headings-color;
+	letter-spacing: 0;
+	font-size: 18px;
+	@include media-breakpoint-up(lg) {
+		font-size: $_h6-fsz * 1px;
+	}
+}
+
+.big {
+	color: $gray-6;
+}
+
+
+// Buttons
+.button {
+	font-size: 16px;
+	padding: 12px 22px;
+	@include media-breakpoint-up(lg) {
+		font-size: $button-font-size;
+		padding: $button-padding-y $button-padding-x;
+	}
+}
+
+
+.button-primary {
+	&:hover, &:focus, &:active {
+		background: $gray-6;
+		border-color: $gray-6;
+	}
+}
+
+
+%context-dark {
+	.big {
+		color: $white;
+	}
+}
+
+// Offsets
+
+h6 + p {
+	margin-top: 1px;
+}
+
+* + .button {
+	margin-top: 20px;
+}
+
+* + .row {
+	margin-top: 40px;
+}
+
+@include media-breakpoint-up(lg) {
+	* + .big {
+		margin-top: 29px;
+	}
+	* + .button {
+		margin-top: 40px;
+	}
+}
+
+@include media-breakpoint-up(xl) {
+	p + p {
+		margin-top: 36px;
+	}
+}
+
+/*
+ Builder Styles
+ */
+[data-x-mode="true"] .bounding-fix:after {
+	content: '';
+	position: absolute;
+	top: -20px;
+	left: 0;
+	width: 100%;
+	height: 40px;
+}
+
+[data-x-mode="true"] .bounding-fix {
+	position: relative;
+}

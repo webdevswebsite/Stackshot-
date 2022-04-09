@@ -1,0 +1,50 @@
+/** @section Info */
+
+.info-group {
+}
+
+* + .info-group,
+* + .info-item {
+	margin-top: 30px;
+
+	// Extra large ≥ 1200px
+	@include media-breakpoint-up(xl) {
+		margin-top: 40px;
+	}
+}
+
+.info-header {
+	color: $secondary;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	@include group(20px, 10px);
+
+	%context-dark & {
+		color: $white;
+	}
+}
+
+.info-title {
+	color: inherit;
+}
+
+* + .info-text {
+	margin-top: 11px;
+}
+
+.info-social {
+	@include group(30px, 20px);
+
+	a {
+		@include link( inherit, $secondary );
+	}
+}
+
+.info-item + .info-social {
+	margin-top: 40px;
+
+	@include media-breakpoint-up(xl) {
+		margin-top: 70px;
+	}
+}

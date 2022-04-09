@@ -1,0 +1,142 @@
+/** @section Products */
+
+// pricing
+.pricing {
+	display: flex;
+	flex-wrap: wrap;
+	background: $white;
+	box-shadow: 0 25px 90px rgba($gray-700, 0.08);
+}
+
+.pricing-body {
+	padding: 5% 0;
+	flex-grow: 1;
+
+	li {
+		position: relative;
+		padding: 0 4%;
+
+
+		+ li {
+			position: relative;
+
+			&::before {
+				position: absolute;
+				content: '';
+				top: 50%;
+				left: 0;
+				width: 0;
+				height: 85%;
+				border-left: 1px solid $gray-4;
+				transform: translateY(-50%);
+			}
+		}
+	}
+}
+
+.pricing-total {
+	text-align: center;
+	width: 100%;
+	padding: 2% 4%;
+	background: $primary;
+
+	> * {
+		display: inline-block;
+
+		+ * {
+			margin-top: 0;
+			margin-left: 30px;
+		}
+	}
+}
+
+.pricing-title {
+	color: $secondary;
+
+	> * {
+		color: inherit;
+	}
+}
+
+* + .pricing-subtitle { margin-top: 4px; }
+.pricing-subtitle + .pricing-text { margin-top: 15px; }
+
+// Media
+
+@include media-breakpoint-down(sm) {
+	.pricing-body {
+		width: 100%;
+		overflow-x: auto;
+		white-space: nowrap;
+
+		> li {
+			display: inline-block;
+		}
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.pricing-body {
+		display: flex;
+    padding: 5% 4%;
+
+		li {
+      &:first-child { padding-left: 0; }
+      &:last-child { padding-right: 0; }
+			flex: 0 0 33.33333%;
+			max-width: 33.33333%;
+		}
+	}
+
+	.pricing-subtitle + .pricing-text { margin-top: 25px; }
+}
+
+@include media-breakpoint-up(lg) {
+
+	.pricing-body {
+		padding-right: 2%;
+	}
+
+	.pricing-total {
+		text-align: inherit;
+		padding-top: 5.4%;
+		padding-bottom: 5.4%;
+		flex-basis: 25%;
+		max-width: 25%;
+
+		> * {
+			display: block;
+
+			+ * {
+				margin-left: 0;
+			}
+		}
+	}
+
+	* + .pricing-price { margin-top: 6px; }
+	.pricing-price + .pricing-text { margin-top: 28px; }
+	.pricing-subtitle + .pricing-text { margin-top: 34px; }
+}
+
+@include media-breakpoint-between(lg, lg) {
+
+	.pricing-1 {
+		.pricing-total {
+			padding-left: 2%;
+			padding-right: 2%;
+			flex-basis: 22%;
+		}
+
+		.pricing-body {
+			padding-left: 2%;
+		}
+	}
+}
+
+@include media-breakpoint-up(xl) {
+
+	.pricing-body li {
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+}

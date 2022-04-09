@@ -1,0 +1,19 @@
+mixin pricing-modern( obj )
+  .pricing-modern.novi-bg.novi-bg-img(class=obj.selected ? 'pricing-modern-selected' : '')&attributes(attributes)
+    .pricing-modern-top
+      h4.pricing-modern-title=obj.title
+      h6.pricing-modern-subtitle Starting from
+      .box-pricing-simple
+        h2.box-pricing-simple-title=obj.price
+        span.box-pricing-simple-period monthly
+      .pricing-modern-discount
+        span.pricing-modern-discount-value=obj.discountValue + ' ' + 'Off' + ' '
+        span.pricing-modern-discount-regular= '(' + 'Regular:' + ' ' + '$' + obj.regularValue + ')'
+      a.button.button-gray-900(href="#") Get Started
+    .pricing-modern-badge=obj.badgeText
+    .pricing-modern-bottom
+      ul.list-pricing
+        each item in obj.list
+          li
+            span.main=item.first
+            span=item.text

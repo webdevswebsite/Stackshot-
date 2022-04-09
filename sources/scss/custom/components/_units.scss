@@ -1,0 +1,38 @@
+/** @section Responsive units */
+
+@include unit-responsive(20px);
+
+//
+// Unit Spacing
+//
+.unit-spacing-xs {
+	@include unit-spacing(7px, 15px);
+}
+
+.unit-spacing-md {
+	@include unit-spacing(15px);
+}
+
+.unit-spacing-1 {
+	@include unit-spacing(40px);
+}
+
+.unit-spacing-2 {
+	@include unit-spacing(30px, 0);
+}
+
+.unit-spacing-3 {
+	@include unit-spacing(14px);
+}
+
+.unit-spacing-4 {
+	@include unit-spacing(15px, 5px);
+}
+
+.unit-spacing-5 {
+	@include unit-spacing(7px, 2px);
+}
+
+.unit-spacing-6 {
+	@include unit-spacing(10px, 0);
+}

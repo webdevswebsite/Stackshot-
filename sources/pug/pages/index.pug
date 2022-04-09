@@ -1,0 +1,624 @@
+//- Extends
+extends ../_skeleton
+
+include ../components/_pricing-modern
+include ../components/_icons
+include ../components/_card
+include  ../components/_quotes
+
+//- Variables
+block variables
+
+//- Page
+block page
+	include ../sections/_header-hosting
+	='\n'
+	
+	// Main Section
+	section.section.section-inset-20.bg-image.novi-bg.novi-bg-img.context-dark.bg-overlay-2( style='background-image: url(images/bg-hosting-1.jpg);' )
+		.container
+			.row.row-40.row-bordered-center.row-fix
+				.col-lg-6.wow.fadeInUp
+					h1 Fast Web Hosting
+					h4 Up to 20x faster servers
+					p.big.inset-custom-3 If you’re searching for a reliable hosting services provider, there’s no need to look further. Get the top-notch hosting experience from RightHost.
+					.group-1
+						a.button.button-primary(href="#") Sign Up
+						a.button.button-white(href="#", data-custom-scroll-to='pricing') View Pricing
+				
+				.col-lg-6.wow.fadeInUp( data-wow-delay='.05s' )
+					.inset-custom-4
+						h2 Starting at
+							=' '
+							br.d-none.d-lg-block
+							| Only
+						.box-pricing-simple.box-pricing-simple-2
+							h2.box-pricing-simple-title.text-primary $2.69
+							span.box-pricing-simple-period per month
+						h4.font-weight-regular
+							span.font-weight-sbold 63% Off
+							|
+							| (Regular price: $7.28)
+						ul.list-decorative.list-decorative-2
+							li Speed optimized for WP
+							li 24/7/365 Support
+							li 99.9% uptime commitment
+							li Free SSL certificate
+	='\n'
+	
+	section.section.section-inset-23.bg-default.text-center.novi-bg.novi-bg-img#pricing
+		.container
+			.block-xxl.text-center.wow.fadeInUp
+				h2 Fully powered Web Hosting that meets all Your needs!
+			.row.row-30
+				.col-lg-6.wow.fadeInUp( data-wow-delay='.05s' ): p.big RightHost provides hosting services for both personal and corporate clients. Whether you own an international enterprise or need hosting for a personal blog, we are here to help.
+				.col-lg-6.wow.fadeInUp( data-wow-delay='.05s' ): p.big From shared to dedicated hosting, we can create proper servers and environment built with the top-notch equipment to match your company’s budget, needs, and requirements.
+			.row.justify-content-center.row-30
+				.col-md-6.col-lg-5.col-xl-3.bounding-fix.wow.fadeInUp( data-wow-delay='.1s' )
+					+pricing-modern({
+						title:         'Shared Hosting',
+						price:         '$2.69',
+						discountValue: '63%',
+						regularValue:  '7.28',
+						badgeText:     'Perfect for personal blogs',
+						list:          [
+							{
+								first: 'WordPress',
+								text:  ', Drupal & Joomla optimized'
+							},
+							{
+								first: '15GB',
+								text:  ' SSD Storage'
+							},
+							{
+								first: 'Free',
+								text:  ' SSL Certificate'
+							},
+							{
+								first: 'Free',
+								text:  ' Domain Included'
+							}
+						]
+					})
+				
+				.col-md-6.col-lg-5.col-xl-3.bounding-fix.wow.fadeInUp( data-wow-delay='.15s' )
+					+pricing-modern({
+						title:         'Reseller Hosting',
+						price:         '$8.29',
+						discountValue: '48%',
+						regularValue:  '15.28',
+						badgeText:     'For small businesses',
+						list:          [
+							{
+								first: 'Designed',
+								text:  ', for WordPress-based websites'
+							},
+							{
+								first: '30GB',
+								text:  ' SSD Storage'
+							},
+							{
+								first: 'Unmetered',
+								text:  ' Bandwidth'
+							},
+							{
+								first: 'Weekly',
+								text:  ' Backups'
+							}
+						]
+					})
+				
+				.col-md-6.col-lg-5.col-xl-3.bounding-fix.wow.fadeInUp( data-wow-delay='.2s' )
+					+pricing-modern({
+						selected:      true,
+						title:         'VPS Hosting',
+						price:         '$12.69',
+						discountValue: '33%',
+						regularValue:  '22.28',
+						badgeText:     'For large websites',
+						list:          [
+							{
+								first: 'Unlimited',
+								text:  ', Email Accounts and Websites'
+							},
+							{
+								first: 'SSL',
+								text:  ' Certificate Pre-installed'
+							},
+							{
+								first: 'Unlimited',
+								text:  ' Traffic'
+							},
+							{
+								first: 'Daily',
+								text:  ' Backups'
+							}
+						]
+					})
+				
+				.col-md-6.col-lg-5.col-xl-3.bounding-fix.wow.fadeInUp( data-wow-delay='.25s' )
+					+pricing-modern({
+						title:         'Dedicated Hosting',
+						price:         '$22.69',
+						discountValue: '25%',
+						regularValue:  '27.28',
+						badgeText:     'For corporate sites and online stores',
+						list:          [
+							{
+								first: 'Intel Xeon',
+								text:  ', 3GHz servers with 32 GB RAM'
+							},
+							{
+								first: 'SATA',
+								text:  ' SSD (2x480 GB)'
+							},
+							{
+								first: 'Public network',
+								text:  ': 1 Gbps'
+							},
+							{
+								first: 'Private network',
+								text:  ': 100 Mbps'
+							}
+						]
+					})
+	='\n'
+	
+	section.section: hr
+	='\n'
+	
+	section.section.section-inset-23.bg-default.text-center#wp-hosting
+		.container
+			.block-xxl
+				h2 Need help?
+				p.big.text-gray-6 RightHost is always ready to provide you with information and consultations on our services. We will gladly help you decide what hosting solution to choose.
+			.row.row-narrow.row-20.offset-custom-3
+				.col-md-6.wow.fadeInUp( data-wow-delay='.05s' )
+					.box-advantage.novi-bg-img.novi-bg( style='background-image: url(images/box-advantage-img-1.jpg); background-size: cover; background-position: center;' )
+						if(!builder)
+							+icon-18
+						else
+							+img('icon-10-74x74.png')
+						h3.box-advantage-title Call us
+						p.box-advantage-text Our support team will be happy to answer all your questions abour RightHost hosting services and offers.
+						a.link-arrow.link-arrow-right(href='tel:#')
+							span ➞
+							| Give Us a Call
+				
+				.col-md-6.wow.fadeInUp( data-wow-delay='.1s' )
+					.box-advantage.bg-primary.novi-bg-img.novi-bg
+						if(!builder)
+							+icon-19
+						else
+							+img('icon-11-74x74.png')
+						h3.box-advantage-title Live chat
+						p.box-advantage-text You can always ask us directly through the chat what type of hosting will fit your website the best way.
+						a.link-arrow.link-arrow-right(href="#")
+							span ➞
+							| Chat with Us
+				
+				.col-md-6.wow.fadeInUp( data-wow-delay='.05s' )
+					.box-advantage.bg-gray-900.novi-bg-img.novi-bg
+						if(!builder)
+							+icon-20
+						else
+							+img('icon-12-74x74.png')
+						h3.box-advantage-title Email us
+						p.box-advantage-text Feel free to send us an e-mail to discuss various hosting options that we can offer you.
+						a.link-arrow.link-arrow-right(href='mailto:' )
+							span ➞
+							| Send an Email
+				
+				.col-md-6.wow.fadeInUp( data-wow-delay='.1s' )
+					.box-advantage.novi-bg-img.novi-bg( style='background-image: url(images/box-advantage-img-2.jpg); background-size: cover; background-position: center;' )
+						if(!builder)
+							+icon-21
+						else
+							+img('icon-13-74x74.png')
+						h3.box-advantage-title Real reviews
+						p.box-advantage-text All reviews and testimonials  left by our customers are 100% real and will help you choose the best hosting plan.
+						a.link-arrow.link-arrow-right(href="#", data-custom-scroll-to="testimonials")
+							span ➞
+							| Read Reviews
+	='\n'
+	
+	section.section.section-inset-23.bg-default.novi-bg-img.novi-bg#cms-hosting
+		.container
+			.row.row-50.justify-content-between.row-fix
+				.col-lg-5.wow.fadeInUp( data-wow-delay='.05s' )
+					h2 Optimized Hosting: The Best Speed & Security Settings
+					p.big RightHost provides the top-notch speed optimization and security settings tailored to the most popular content management systems.
+					a.button.button-primary(href="#") Learn More
+				.col-lg-6
+					.row.row-55
+						.col-lg-6.col-lg-6.wow.fadeInUp( data-wow-delay='.1s' )
+							.box-classic-icon
+								+img("icon-cms-1-74x74.png")
+								h6.box-classic-icon-title WordPress
+								p.box-classic-icon-text WordPress powers over 34% of all the websites on the Internet.
+						.col-lg-6.col-lg-6.wow.fadeInUp( data-wow-delay='.15s' )
+							.box-classic-icon
+								+img("icon-cms-2-74x74.png")
+								h6.box-classic-icon-title Joomla!
+								p.box-classic-icon-text Joomla! is the best user-friendly way to build your website.
+						.col-lg-6.col-lg-6.wow.fadeInUp( data-wow-delay='.2s' )
+							.box-classic-icon
+								+img("icon-cms-3-63x74.png")
+								h6.box-classic-icon-title Magento
+								p.box-classic-icon-text Magento is an open source CMS for building eCommerce websites.
+						.col-lg-6.col-lg-6.wow.fadeInUp( data-wow-delay='.25s' )
+							.box-classic-icon
+								+img("icon-cms-4-142x74.png")
+								h6.box-classic-icon-title Drupal
+								p.box-classic-icon-text Drupal is a free, open-source web content management platform.
+	='\n'
+	
+	section.section.section-inset-23.bg-default#features
+		.container
+			.inset-custom-2.section-inset-21.bg-image.novi-bg.novi-bg-img.context-dark( style='background-image: url(images/bg-hosting-2.jpg);' )
+				.block-3.text-center.col-lg-6.wow.fadeInUp( data-wow-delay='.05s' )
+					h2 Experience The Hosting difference today!
+					p.big As one of the nations’ leading hosting providers, RightHost guarantees outstanding performance of our solutions. With us,  your website will be fast and secure!
+					a.button.button-primary(href="#") Sign Up
+				.row.justify-content-center.offset-custom-3
+					.col-lg-10
+						.row.row-30.row-lg-65
+							.col-lg-6.wow.fadeInUp( data-wow-delay='.1s' )
+								.box-modern-icon
+									if(!builder)
+										+icon-22
+									else
+										+img('icon-14-74x74.png')
+									h4.box-modern-icon-title Up to 20X faster servers
+									p.box-modern-icon-text Compared to other popular hosting providers, our servers are 20 times faster and make RightHost one of the best choices for hosting websites of any complexity.
+							.col-lg-6.wow.fadeInUp( data-wow-delay='.15s' )
+								.box-modern-icon
+									if(!builder)
+										+icon-23
+									else
+										+img('icon-15-74x74.png')
+									h4.box-modern-icon-title Crew support
+									p.box-modern-icon-text If your website needs additional support, our team will gladly help you solve any technical issues and make your website work incredibly fast on our servers.
+							.col-lg-6.wow.fadeInUp( data-wow-delay='.1s' )
+								.box-modern-icon
+									if(!builder)
+										+icon-24
+									else
+										+img('icon-16-74x74.png')
+									h4.box-modern-icon-title Free account migration
+									p.box-modern-icon-text You can easily transfer your website from other hosting provider with free account migration service. The website transfer is performed within 24 hours after your signup.
+							.col-lg-6.wow.fadeInUp( data-wow-delay='.15s' )
+								.box-modern-icon
+									if(!builder)
+										+icon-25
+									else
+										+img('icon-17-74x74.png')
+									h4.box-modern-icon-title 99.9% uptime commitment
+									p.box-modern-icon-text At RightHost, we guarantee full committment to delivering 99.9% uptime. This is true not only for our network but also for all your sites and other solutions provided by our team.
+	='\n'
+	
+	section.section.section-inset-4.bg-primary.context-dark.text-center.novi-bg-img.novi-bg#domain-registration
+		.container
+			.row.row-fix.justify-content-center
+				.col-lg-9.wow.fadeInUp( data-wow-delay='.05s' )
+					h2 Register a domain
+					.unit.unit-spacing-5.flex-column.flex-sm-row.justify-content-center.align-items-center.offset-custom-1
+						.unit-left
+							p.big Popular TLD Options:
+						.unit-body
+							form.form-checkboxes
+								.form-checkboxes-wrap
+									input.form-checkboxes-input(type="checkbox" name="com" value="com" id="checkbox-com" checked)
+									label.form-checkboxes-label(for="checkbox-com") .com
+								.form-checkboxes-wrap
+									input.form-checkboxes-input(type="checkbox" name="net" value="net" id="checkbox-net")
+									label.form-checkboxes-label(for="checkbox-net") .net
+								.form-checkboxes-wrap
+									input.form-checkboxes-input(type="checkbox" name="org" value="org" id="checkbox-org")
+									label.form-checkboxes-label(for="checkbox-org") .org
+								.form-checkboxes-wrap
+									input.form-checkboxes-input(type="checkbox" name="biz" value="biz" id="checkbox-biz")
+									label.form-checkboxes-label(for="checkbox-biz") .biz
+								.form-checkboxes-wrap
+									input.form-checkboxes-input(type="checkbox" name="info" value="info" id="checkbox-info")
+									label.form-checkboxes-label(for="checkbox-info") .info
+					
+					
+					.block-xxl.offset-custom-4
+						form.rd-form.rd-form-inline.form-inline-3(action='#')
+							.form-wrap
+								input#register-domain.form-input( type='text', name='text')
+								label.form-label( for='register-domain' ) Enter a desired domain name
+							.form-button
+								button.button.button-gray-900( type='submit' ) Search
+									span.button-overlay
+	='\n'
+	
+	section.section.section-inset-23.bg-default.novi-bg-img.novi-bg#testimonials
+		.container
+			.block-lg.block-center.text-center: h2 What our customers have to say
+			// Owl Carousel
+			.owl-carousel.owl-modern-testimonials(
+			data-items='1',
+			data-md-items='2',
+			data-lg-items='3',
+			data-dots='true',
+			data-nav='false',
+			data-loop='false',
+			data-margin='30',
+			data-xl-margin='50',
+			data-mouse-drag='false',
+			data-autoplay='false'
+			)
+				+quote-modern({
+					text:   "I just want to say thank you for the best hosting service I have ever had! With your  Support Team, I am sure I'll be your customer for life.",
+					author: 'Adam Smith',
+					name:   'October 8, 2019'
+				})
+				+quote-modern({
+					text:   "With RightHost Reliable Uptime, Great Tracking and Admin Controls, I don’t have to waste my time anymore. Their customer service is great!",
+					author: 'Debra Adams',
+					name:   'October 10, 2019'
+				})
+				+quote-modern({
+					text:   "I'd like to thank you for a long partnership with outstanding customer service every time I deal with you. This is why I choose RightHost.",
+					author: 'Bobby Moore',
+					name:   'October 12, 2019'
+				})
+				+quote-modern({
+					text:   "RightHost offers excellent service with prompt reaction and high patience. Their prices are also very reasonable. I highly recommend them.",
+					author: 'Ashley Morgan',
+					name:   'October 16, 2019'
+				})
+				+quote-modern({
+					text:   "I am blessed with having found the best Web Hosting company ever. Great service, great hosting, and the staff are amazing. Thank you!",
+					author: 'Anthony Edwards',
+					name:   'October 17, 2019'
+				})
+				+quote-modern({
+					text:   "I'm speechless. I want to thank you for your well wishes and your kind words. Its so hard to find good service these days but you guys are great!",
+					author: 'Irene Powell',
+					name:   'October 18, 2019'
+				})
+	='\n'
+	
+	section.section: hr
+	='\n'
+	
+	section.section.section-inset-23.bg-default.novi-bg-img.novi-bg
+		.container
+			.row.row-40
+				.col-lg-6.text-center.text-sm-left.wow.fadeInUp( data-wow-delay='.05s' )
+					h2 RightHost —
+						=' '
+						br.d-none.d-lg-block
+						| award-winning solutions
+					p.big The quality of our solutions and the unique approach have been numerously awarded and recognized by the world’s leading technical resources. Here are our latest awards.
+				
+				.col-lg-6.text-center
+					.row.row-30
+						.col-sm-4.wow.fadeInUp( data-wow-delay='.1s' )
+							.box-brand
+								+img("landing-hosting-brand-1-151x151.png")
+								p.box-brand-text Top 5000 Hosting Providers Award
+						.col-sm-4
+							.box-brand.wow.fadeInUp( data-wow-delay='.15s' )
+								+img("landing-hosting-brand-2-151x151.png")
+								p.box-brand-text Best hosting provider (2018)
+						.col-sm-4
+							.box-brand.wow.fadeInUp( data-wow-delay='.2s' )
+								+img("landing-hosting-brand-3-151x151.png")
+								p.box-brand-text Fastest hosting solutions (2019)
+	='\n'
+	
+	section.section.section-inset-23.bg-default
+		.container
+			+parallax({
+				img:        'bg-hosting-3.jpg',
+				innerClass: 'section-inset-23 context-dark text-center'
+			})
+				.inset-custom-2
+					.block-xxl.wow.fadeInUp( data-wow-delay='.05s' )
+						h2 The top hosted software, features, hardware & more!
+						p.big All our hosting solutions use the best software and hardware to deliver the utmost level of services and top-notch features to our customers.
+						a.button.button-gray-7(href="#") Sign Up
+					.row.row-30.row-lg-40.offset-custom-6.justify-content-center
+						.col-md-6.col-lg-4.col-xl-2.wow.fadeInUp( data-wow-delay='.1s' )
+							.box-corporate-icon
+								if(!builder)
+									+icon-corpotate-1
+								else
+									+img('icon-18-52x52.png')
+								h5.box-corporate-icon-title SSD
+								p.box-corporate-icon-text We use reliable solid state drives for all our hosting servers.
+								a.link-arrow.link-arrow-right.link-arrow-primary(href="#")
+									span ➞
+									| Learn More
+						.col-md-6.col-lg-4.col-xl-2.wow.fadeInUp( data-wow-delay='.15s' )
+							.box-corporate-icon
+								if(!builder)
+									+icon-corpotate-2
+								else
+									+img('icon-19-52x52.png')
+								h5.box-corporate-icon-title PHP 7
+								p.box-corporate-icon-text Run your websites with the latest version of PHP.
+								a.link-arrow.link-arrow-right.link-arrow-primary(href="#")
+									span ➞
+									| Learn More
+						.col-md-6.col-lg-4.col-xl-2.wow.fadeInUp( data-wow-delay='.2s' )
+							.box-corporate-icon
+								if(!builder)
+									+icon-corpotate-3
+								else
+									+img('icon-20-52x52.png')
+								h5.box-corporate-icon-title Free SSL
+								p.box-corporate-icon-text RightHost provides free SSL certificates for regular clients.
+								a.link-arrow.link-arrow-right.link-arrow-primary(href="#")
+									span ➞
+									| Learn More
+						.col-md-6.col-lg-4.col-xl-2.wow.fadeInUp( data-wow-delay='.25s' )
+							.box-corporate-icon
+								if(!builder)
+									+icon-corpotate-4
+								else
+									+img('icon-21-52x52.png')
+								h5.box-corporate-icon-title Fast servers
+								p.box-corporate-icon-text Our servers are located worldwide to offer top speed.
+								a.link-arrow.link-arrow-right.link-arrow-primary(href="#")
+									span ➞
+									| Learn More
+						.col-md-6.col-lg-4.col-xl-2.wow.fadeInUp( data-wow-delay='.3s' )
+							.box-corporate-icon
+								if(!builder)
+									+icon-corpotate-5
+								else
+									+img('icon-22-52x52.png')
+								h5.box-corporate-icon-title Free SSH
+								p.box-corporate-icon-text We also provide  SSH certificates for better encryption.
+								a.link-arrow.link-arrow-right.link-arrow-primary(href="#")
+									span ➞
+									| Learn More
+	='\n'
+	
+	section.section.bg-default.section-inset-23.novi-bg-img.novi-bg
+		.container
+			.row.row-30.align-items-center
+				.col-lg-6.wow.fadeInUp( data-wow-delay='.05s' )
+					h2 More options to
+						=' '
+						br.d-none.d-lg-block
+						| fit your needs
+					p.big.inset-custom-1 Besides providing reliable hardware for hosting, our company also offers a range of additional services for your new website. You can get everything you want with RightHost.
+				.col-lg-6
+					.row.row-20.row-lg-40
+						.col-sm-6.wow.fadeInUp( data-wow-delay='.05s' )
+							.box-check-icon
+								.unit.unit-spacing-3
+									.unit-left
+										+check-icon-small.text-primary
+									.unit-body: h6 High-Level Encryption
+								p.box-check-icon-title Every site hosted with RightHost is encrypted to protect the data.
+						.col-sm-6.wow.fadeInUp( data-wow-delay='.1s' )
+							.box-check-icon
+								.unit.unit-spacing-3
+									.unit-left
+										+check-icon-small.text-primary
+									.unit-body: h6 Single site
+								p.box-check-icon-title Looking forward to host a single site? We are ready to help!
+						.col-sm-6.wow.fadeInUp( data-wow-delay='.15s' )
+							.box-check-icon
+								.unit.unit-spacing-3
+									.unit-left
+										+check-icon-small.text-primary
+									.unit-body: h6 Wildcard
+								p.box-check-icon-title Create wildcard subdomains easily with the help of our control panel.
+						.col-sm-6.wow.fadeInUp( data-wow-delay='.2s' )
+							.box-check-icon
+								.unit.unit-spacing-3
+									.unit-left
+										+check-icon-small.text-primary
+									.unit-body: h6 Premium SSL
+								p.box-check-icon-title Get SSL protection of premium quality for all your websites.
+	='\n'
+	
+	section.section: hr
+	='\n'
+	
+	section.section.section-inset-23.bg-default.novi-bg-img.novi-bg#faq
+		.container
+			.block-xxl.text-center
+				h2 Answers to your
+					=' '
+					br.d-none.d-lg-block
+					| frequently asked questions
+				p.big Take a look at our FAQ section to find answers to the most popular questions.
+			.row.row-fix.justify-content-center
+				.col-lg-8
+					#accordion1.card-group-custom( role='tablist' aria-multiselectable='false' )
+						+card({
+							parentId: 'accordion1',
+							title:    'Do I need multiple domain names?'
+						}).card-modern
+							p.text-gray-6 You usually want to focus your brand-building efforts on a single domain name. Especially if you’re just starting to build an online presence for yourself or your organization, trying to build on multiple domain names can spread your efforts too thin.
+							p.text-gray-6 However, it can be helpful to purchase additional domain names apart from your primary domain name. For example, if you have a .com, it’s usually a good idea to go ahead and buy the .org version if it is available (and vice versa). It’s also a good idea to buy common misspellings of your primary domain name, or other things people might accidentally type if they were looking for you.
+							p.text-gray-6 Generally, when you buy these additional domain names, you don’t want to set up whole sites on them — you just want to set up a simple 301 Redirect to your primary domain. (Make sure you set up wildcard redirects so that links to any URL with the wrong domain name will end up in the right place.)
+						
+						+card({
+							parentId: 'accordion1',
+							title:    'What are different types of hosting?'
+						}).card-modern
+							p.text-gray-6 There are several general categories of web hosting:
+							ul.list-marked.list-marked-3.text-gray-6
+								li Shared Hosting is the most common. This involves many customers sharing a single machine.
+								li Dedicated server hosting involves the customer having complete use of an actual server.
+								li Colocation hosting allows the customer to use their own server equipment, and the hosting company rents space in a data center, providing access to power and network connectivity.
+								li Cloud Hosting is a type of VPS hosting plan in which the Virtual Machines are running on large pools of computing power — dozens or hundreds of machines networked together into a “cloud.”
+						
+						+card({
+							parentId: 'accordion1',
+							title:    'Can I host my website on shared hosting?'
+						}).card-modern
+							p.text-gray-6 Usually, yes. The question is whether you want to.
+							p.text-gray-6 If you are launching a more-or-less basic site which will have limited traffic — such as a personal blog, a homepage for a small offline business, or a website for local non-profit organization — then shared hosting is a great way to go. It will provide all the hosting power you need for up to several hundred visitors a day, for a reasonably low cost.
+							p.text-gray-6 If you need a website that will work with larger traffic numbers — several thousand a day, especially highly engaged visitors on an interactive site (like a store or web app) — then shared hosting is going to be a terrible experience for you. You would be better off, in that case, with a VPS hosting plan.
+						
+						+card({
+							show:     true,
+							parentId: 'accordion1',
+							title:    'How to edit DNS?\n'
+						}).card-modern
+							p.text-gray-6 Your DNS records are usually managed at your domain registrar, unless you have changed the Name Servers to “point” them to your web hosting company (a common practice).
+							p.text-gray-6 It is easy to edit your DNS records. There’s usually a link to something like “DNS Records” or “DNS Zone Editor” on the control panel. A DNS record is of the following types:
+							ul.list-marked.list-marked-3.text-gray-6
+								li A — the main record, used to identify the IP address that all requests should be sent to;
+								li CNAME — Used to map one domain onto another;
+								li MX — Mail exchange, used to identify the mail server for a domain.
+							p.text-gray-6 For more information on domain management and other questions, feel free to contact our support.
+	='\n'
+	
+	section.section.section-inset-23.bg-default
+		.container
+			+parallax({
+				img:        'bg-hosting-4.jpg',
+				innerClass: 'section-inset-23 context-dark text-center text-xl-left'
+			})
+				.inset-custom-2
+					.row.row-fix.row-30.justify-content-center
+						.col-xl-auto.wow.fadeInUp( data-wow-delay='.05s' )
+							.heading-1 #1 Web Hosting
+							h4 The nation’s leading hosting services provider
+						.col-xl-auto.wow.fadeInUp( data-wow-delay='.1s' )
+							.group-md.offset-custom-7
+								a.button.button-primary(href="#") Sign Up
+								a.button.button-gray-7(href="#", data-custom-scroll-to='pricing') View Pricing
+	='\n'
+	
+	section.section.section-inset-23.bg-default.novi-bg-img.novi-bg#why-choose
+		.container
+			h3 Your high speed website hosting service
+			.row.row-20
+				.col-12
+					h6 Get hosted now!
+					p At RightHost, we strongly believe that we will provide you a great hosting package because we know the nuance of what a web design company, a website or a robust web applications needs. Because we are a leading company offering top-notch hosting worldwide for years, we know what our clients need. From this vast experience we can 100% recommend our hassle-free Web Hosting solutions. Take a look at the solutions we offer to our customers.
+				.col-12
+					h6 Shared hosting
+					p Shared hosting is Web hosting service where we host pages for multiple Web sites, each having its own Internet domain name, from a single Web server. Although shared hosting is a less expensive way for businesses to create a Web presence, it is usually not sufficient for Web sites with high traffic.
+				.col-12
+					h6 Reseller hosting
+					p This solution dedicates specific server resources to an administrator who can create shared hosting accounts. Reseller Hosting is typically used as a stable, affordable product for freelancers & agencies to provide to clients. It allows agencies & freelancers to generate recurring revenue via hosting, maintenance & turn-key solutions while providing clients with world-class infrastructure & technical expertise.
+				.col-12
+					h6 Virtual Private Servers (VPS) Hosting
+					p VPS is short for a Virtual Private Server. VPS hosting is one of the most popular hosting services you can choose for your website. It uses virtualization technology to provide you with dedicated (private) resources on a server with multiple users.
+				.col-12
+					h6 Dedicated servers
+					p We provide dedicated servers to give full functionality to your websites and web apps if they require more performance than average projects. Dedicated servers provide functionality like an in-house server but is owned, operated and managed by the backend provider. The user/customer remotely connects with the dedicated server over the Internet to perform a suite of server based services.
+	='\n'
+	
+	include ../sections/_footer-hosting
+
+
+
+
+
+
+

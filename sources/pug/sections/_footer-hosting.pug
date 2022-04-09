@@ -1,0 +1,82 @@
+// Footer
+footer.section.footer-hosting.bg-gray-900.context-dark.novi-bg.novi-bg-img
+  .container
+    .footer-hosting-top
+      .row.row-fix.row-10.align-items-center
+        .col-lg-6.col-xl-7
+          .unit.unit-spacing-4.flex-column.flex-xl-row
+            .unit-left: h4 Newsletter
+            .unit-body.align-self-xl-end: p Subscribe to our newsletter to receive fresh news and updates.
+
+        .col-lg-6.col-xl-5
+          form.rd-form.rd-mailform.rd-form-inline.form-inline-3( data-form-output='form-output-global', data-form-type='subscribe', method='post', action='bat/rd-mailform.php' )
+            .form-wrap
+              input#subscribe-form-email-footer.form-input( type='email', name='email', data-constraints='@Email @Required' )
+              label.form-label( for='subscribe-form-email-footer' ) Enter your email address
+            .form-button
+              button.button.button-white( type='submit' ) Submit!
+
+    .footer-hosting-body
+      .row.row-20
+        .col-md-6.col-lg-3
+          h6 Hosting
+          ul.list-simple
+            li: a(href="#") Web Hosting
+            li: a(href="#") WordPress Hosting
+            li: a(href="#") Managed WordPress Hosting
+            li: a(href="#") Reseller Hosting
+            li: a(href="#") VPS Hosting
+            li: a(href="#") Managed VPS Hosting
+            li: a(href="#") Cloud VPS Hosting
+            li: a(href="#") Dedicated Server Hosting
+            li: a(href="#") Email Hosting
+
+        .col-md-6.col-lg-3
+          h6 Features
+          ul.list-simple
+            li: a(href="#") Developer Friendly Hosting
+            li: a(href="#") Domain Registration
+            li: a(href="#") Domain Transfer
+            li: a(href="#") SSL Certificates
+            li: a(href="#") SwiftServers Fast Hosting
+            li: a(href="#") Compare Hosting
+
+        .col-md-6.col-lg-3
+          h6 Services
+          ul.list-simple
+            li: a(href="#") Blog Hosting
+            li: a(href="#") CMS Hosting
+            li: a(href="#") CRM Hosting
+            li: a(href="#") eCommerce Hosting
+            li: a(href="#") Forum Hosting
+            li: a(href="#") Linux Hosting
+            li: a(href="#") Wiki Hosting
+
+        .col-md-6.col-lg-3
+          h6 Support
+          ul.list-simple
+            li: a(href="#") Submit a Support Ticket
+            li: a(href="#") Contact Sales
+            li: a(href="#") Knowledge base
+            li: a(href="#") Hosting Blog
+            li: a(href="#") 99.9% Uptime Commitment
+            li: a(href="#") Anytime Money Back Guarantee
+
+    .footer-hosting-bottom.text-center.text-xxl-left
+      .row.row-fix.row-15.justify-content-center.justify-content-xxl-between
+        .col-xl-auto
+          ul.list-inline.list-inline-sm
+            li: a(href="#") Pricing
+            li: a(href="#") Support
+            li: a(href="#") CMS Hosting
+            li: a(href="#") Features
+            li: a(href="#") Domain Registration
+            li: a(href="#") Testimonials
+            li: a(href="#") Awards
+            li: a(href="#") What We Offer
+            li: a(href="#") FAQ
+
+        .col-xl-auto
+          +list-social.list-social-3
+      +rights
+

@@ -1,0 +1,388 @@
+/** @section Backgrounds */
+
+.context-dark {
+	@extend %context-dark;
+}
+
+%context-dark {
+	// Logo
+	.brand {
+		.brand-logo-dark {
+			display: none;
+		}
+
+		.brand-logo-light {
+			display: block;
+		}
+	}
+
+	h6,
+	.heading-6 {
+		color: $primary;
+	}
+}
+
+%context-light {
+	// Logo
+	.brand {
+		.brand-logo-dark {
+			display: block;
+		}
+
+		.brand-logo-light {
+			display: none;
+		}
+	}
+}
+
+
+// Light Backgrounds
+.bg-default {
+	&:not([style*="background-"]) + &:not([style*="background-"]):not(.overlay-wrap) {
+		padding-top: 0;
+	}
+}
+
+.bg-gray-100 {
+	@include bg-behaviour($gray-100);
+}
+
+.bg-gray-5 {
+	@include bg-behaviour($gray-5);
+}
+
+
+// Dark Backgrounds
+.bg-gray-700 {
+	@extend %context-dark;
+	@include bg-behaviour($gray-700);
+
+	.button-primary.button-nuka {
+
+		&,
+		&:focus,
+		&:hover,
+		&:active,
+		&.active {
+			background-color: $white;
+		}
+	}
+}
+
+.bg-gray-800 {
+	@extend %context-dark;
+	@include bg-behaviour($gray-800);
+
+	color: $gray-600;
+}
+
+.bg-gray-900 {
+	@extend %context-dark;
+	@include bg-behaviour($gray-900);
+}
+
+.bg-primary-app {
+	@extend %context-dark;
+	@include bg-behaviour($primary-5);
+}
+
+
+// Accent Backgrounds
+.bg-primary {
+	@extend %context-dark;
+	@include bg-behaviour($primary);
+
+	&.rd-navbar {
+		@include bg-behaviour($primary);
+	}
+}
+
+.bg-primary-015 {
+	@include bg-behaviour(rgba($primary, .15));
+}
+
+.bg-primary-1 {
+	@extend %context-dark;
+	@include bg-behaviour($primary-3);
+}
+
+.bg-primary-2 {
+	@extend %context-dark;
+	background: linear-gradient(180deg, $gray-800 0%, rgba(25, 32, 49, 0) 57.88%), $primary-5;
+}
+
+.bg-primary-3 {
+	@include bg-behaviour($primary);
+
+	a {
+		@include link($gray-700, $gray-700);
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	.link-border-1 {
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+.bg-primary-4 {
+	@include bg-behaviour($primary-7);
+}
+
+.bg-secondary {
+	@include bg-behaviour($secondary);
+}
+
+.bg-secondary-1 {
+	@include bg-behaviour($secondary-5);
+}
+
+
+.bg-wave-dark-wrap {
+	position: relative;
+	@extend %context-dark;
+}
+
+.bg-wave-dark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	pointer-events: none;
+
+	img {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		max-height: 80%;
+		width: 100%;
+	}
+}
+
+.bg-wave-dark + * {
+	position: relative;
+}
+
+.bg-wave-dark-1 {
+	bottom: 9%;
+
+	@include media-breakpoint-up(sm) {
+		bottom: 11%;
+	}
+
+	@include media-breakpoint-up(md) {
+		bottom: 12.3%;
+	}
+}
+
+.bg-wave-dark-2 {
+	bottom: 31%;
+}
+
+.bg-wave-dark-3 {
+	bottom: 27.5%;
+}
+
+
+.bg-wave-light {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	pointer-events: none;
+
+	img {
+		width: 100%;
+	}
+}
+
+.bg-wave-light-1 {
+	top: -400px;
+}
+
+.bg-wave-light-2 {
+	top: -180px;
+}
+
+
+// Background Gradients
+.bg-gradient-primary {
+	@extend %context-dark;
+	background: $gradient-primary;
+
+	.button-secondary {
+		@include btn-variant($gray-700, $white, $white, $white, $secondary-1, $secondary-1);
+	}
+}
+
+.bg-gradient-primary-1 {
+	@extend %context-dark;
+	background: $gradient-primary-1;
+}
+
+
+// Background Image
+.bg-image {
+	background-size: cover;
+	background-position: center;
+}
+
+.bg-image-1 {
+	background-image: url('../images/bg-landing-doctor-1.jpg');
+	background-position: right;
+}
+
+
+// Desktop only
+html:not(.tablet):not(.mobile) {
+	.bg-fixed {
+		@include media-breakpoint-up(lg) {
+			background-attachment: fixed;
+		}
+	}
+}
+
+
+// Pseudo BG
+.pseudo-bg-gray-100-wrap {
+	position: relative;
+
+	> .bg-gray-100 {
+		position: absolute;
+		top: 40.5%;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+
+	+ .bg-gray-100 {
+		padding-top: 0;
+	}
+}
+
+
+// Background overlay
+.overlay-wrap {
+
+	&,
+	.container {
+		position: relative;
+	}
+
+	> .bg-overlay {
+		display: block;
+	}
+}
+
+.bg-overlay {
+	display: none;
+	position: absolute;
+	content: '';
+	top: 0;
+	right: 0;
+	bottom: 38%;
+	left: 0;
+}
+
+.bg-overlay-1 {
+	bottom: 44%;
+}
+
+.bg-overlay-2 {
+	position: relative;
+	z-index: 0;
+
+	&::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		z-index: -1;
+		background: rgba($black, .6);
+		pointer-events: none;
+	}
+
+	@include media-breakpoint-up(lg) {
+		&:after {
+			opacity: 0;
+		}
+	}
+}
+
+.bg-overlay-3 {
+	position: relative;
+	z-index: 0;
+
+	&::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		z-index: -1;
+		background: rgba($secondary, .85);
+		pointer-events: none;
+	}
+}
+
+.bg-overlay-4 {
+	position: relative;
+	z-index: 0;
+
+	&::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		z-index: -1;
+		background: rgba($gray-900, .3);
+		pointer-events: none;
+	}
+}
+
+// Overlay
+.overlay-1 {
+	@include media-breakpoint-down(md) {
+		position: relative;
+
+		&::before {
+			position: absolute;
+			content: '';
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background: linear-gradient(135deg, rgba($white, 1) 0%, transparent 100%);
+		}
+	}
+}
+
+.overlay-2 {
+	position: relative;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: rgba($gray-800, .4);
+		z-index: 1;
+
+		@include media-breakpoint-up(xl) {
+			display: none;
+		}
+	}
+}

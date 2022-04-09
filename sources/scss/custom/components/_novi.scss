@@ -1,0 +1,42 @@
+/** @section Novi */
+
+.novi-bg-img {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+[data-x-mode='true'] {
+	.owl-carousel {
+
+		.owl-nav {
+
+			&.disabled {
+				display: block;
+
+				.owl-prev {
+					left: 0;
+				}
+
+				.owl-next {
+					right: 0;
+				}
+			}
+		}
+	}
+
+	.novi-section {
+		position: relative;
+		z-index: 0;
+
+		&:before {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			z-index: 10;
+			height: 30px;
+		}
+	}
+}

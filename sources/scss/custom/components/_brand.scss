@@ -1,0 +1,17 @@
+/** @section Brand */
+
+.brand {
+	display: inline-block;
+
+	> img { margin-top: 0; }
+
+	.brand-logo-light { display: none; }
+
+	.brand-logo-dark { display: block; }
+}
+
+.brand + h2 { margin-top: 30px; }
+
+@include media-breakpoint-up(lg) {
+	.brand + h2 { margin-top: 40px; }
+}

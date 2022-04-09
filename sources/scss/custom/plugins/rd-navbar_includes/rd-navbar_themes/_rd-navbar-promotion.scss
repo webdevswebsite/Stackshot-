@@ -1,0 +1,45 @@
+/**
+*
+* RD Navbar Corporate
+* =====================================================
+*/
+.rd-navbar-promotion {
+	background-color: transparent;
+
+	.rd-navbar-main {
+
+		// Mega large ≥ 1600px
+		@include media-breakpoint-up(xxl) {
+			max-width: 100%;
+			padding-left: 40px;
+			padding-right: 40px;
+		}
+	}
+
+	// Static
+	&.rd-navbar-static {
+		&:not(.rd-navbar--is-stuck) {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			background-color: transparent;
+			z-index: $zindex-rd-navbar;
+		}
+
+		&.rd-navbar--is-stuck,
+		&.rd-navbar--is-clone {
+			background-color: $white;
+			box-shadow: 0 0 25px rgba($gray-600, .15);
+
+			.rd-navbar-main {
+
+				// Mega large ≥ 1600px
+				@include media-breakpoint-up(xxl) {
+					padding-left: 40px;
+					padding-right: 40px;
+				}
+			}
+		}
+	}
+}

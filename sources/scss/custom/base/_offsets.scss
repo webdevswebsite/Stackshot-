@@ -1,0 +1,349 @@
+/** @section Offsets */
+
+// Paragraph
+* + p {
+	margin-top: 15px;
+}
+
+p {
+
+	& + p {
+		margin-top: 15px;
+
+		// Extra large ≥1200px
+		@include media-breakpoint-up(xl) {
+			margin-top: 26px;
+		}
+	}
+
+	& + h2,
+	& + .heading-2 {
+		margin-top: 15px;
+	}
+}
+
+figure + p { margin-top: 5px; }
+
+img {
+
+	& + p {
+		margin-top: 15px;
+	}
+
+	& + .big {
+		margin-top: 8px;
+	}
+}
+
+svg {
+
+	& + .big {
+		margin-top: 8px;
+	}
+}
+
+* + img { margin-top: 30px; }
+.row + img { margin-top: 50px; }
+
+
+// Heading
+h1,
+.heading-1 {
+
+	& + * {
+		margin-top: 15px;
+	}
+}
+
+h2,
+.heading-2 {
+
+	& + * {
+		margin-top: 15px;
+	}
+
+	& + p {
+		margin-top: 30px;
+	}
+}
+
+h3,
+.heading-3 {
+
+	& + * {
+		margin-top: 15px;
+	}
+}
+
+h4,
+.heading-4 {
+
+	& + * {
+		margin-top: 15px;
+	}
+
+	& + p {
+		// Large ≥ 992px
+		@include media-breakpoint-up(lg) {
+			margin-top: 22px;
+		}
+	}
+
+	&.text-uppercase + h1 {
+		margin-top: 20px;
+
+		// Extra large ≥ 1200px
+		@include media-breakpoint-up(xl) {
+			margin-top: 35px;
+		}
+	}
+}
+
+h5,
+.heading-5 {
+
+	& + * {
+		margin-top: 15px;
+	}
+}
+
+h6,
+.heading-6 {
+
+	& + * {
+		margin-top: 15px;
+	}
+
+	& + h1,
+	& + .heading-1 {
+		margin-top: 20px;
+
+		@include media-breakpoint-up(lg) {
+			margin-top: 33px;
+		}
+	}
+
+	& + h2,
+	& + .heading-2 {
+		margin-top: 20px;
+
+		@include media-breakpoint-up(lg) {
+			margin-top: 30px;
+		}
+	}
+}
+
+h2 + h1 { margin-top: 5px; }
+h4 + ul { margin-top: 22px; }
+p + h4,
+ul + h4 { margin-top: 30px; }
+
+
+// Classes
+* + .row { margin-top: 30px; }
+
+hr + .row {
+	margin-top: 10px;
+}
+
+* + .big {
+	margin-top: 14px;
+
+	// Large ≥ 992px
+	@include media-breakpoint-up(lg) {
+		margin-top: 18px;
+	}
+}
+
+* + .text-block {
+	margin-top: 30px;
+}
+
+* + .button { margin-top: 30px; }
+
+.logo-novi + h3 { margin-top: 20px; }
+.big + h6 { margin-top: 15px; }
+
+.big + img {
+	margin-top: 15px;
+
+	// Extra large ≥1200px
+	@include media-breakpoint-up(xl) {
+		margin-top: 25px;
+	}
+}
+
+
+// Classes + Tags
+.row + h3,
+.row + .heading-3 {
+	margin-top: 80px;
+}
+
+// Classes + Classes
+.container + .container {
+	margin-top: 50px;
+}
+
+.row + .row {
+	margin-top: 50px;
+}
+
+html * + .offset-top-4 { margin-top: 50px; }
+
+// Media offsets
+@include media-breakpoint-up(md) {
+
+	p + h4,
+	ul + h4 { margin-top: 40px; }
+
+	.container + .container { margin-top: 70px; }
+	.row + .row { margin-top: 70px; }
+
+	.logo-novi + h3 { margin-top: 30px; }
+
+	html * + .offset-top-4 { margin-top: 70px; }
+}
+
+@include media-breakpoint-up(lg) {
+
+	.big + h6 { margin-top: 20px; }
+
+	* + .button { margin-top: 40px; }
+	* + .row { margin-top: 40px; }
+	* + .row-sm { margin-top: 50px; }
+	* + .row-md { margin-top: 50px; }
+	* + .rd-form { margin-top: 30px; }
+	* + .offset-top-3 { margin-top: 28px; }
+	* + .offset-top-5 { margin-top: 30px; }
+	html * + .offset-top-6 { margin-top: 26px; }
+	html * + .offset-top-7 { margin-top: 40px; }
+
+	.logo-novi + h3 { margin-top: 40px; }
+
+	html * + .offset-top-4 { margin-top: 90px; }
+}
+
+@include media-breakpoint-up(xl) {
+	* + .row-md { margin-top: 60px; }
+	* + .row-lg { margin-top: 75px; }
+
+	html * + .offset-top-6 { margin-top: 36px; }
+	html * + .offset-top-7 { margin-top: 60px; }
+}
+
+
+// Custom Offset
+
+html * + .offset-top-13 {
+	margin-top: 13px;
+}
+
+* + .offset-top-15 {
+
+	// Extra large ≥ 1200px
+	@include media-breakpoint-up(xl) {
+		margin-top: 15px;
+	}
+}
+
+* + .offset-top-60 {
+
+	// Extra large ≥ 1200px
+	@include media-breakpoint-up(xl) {
+		margin-top: 60px;
+	}
+}
+
+
+/*
+ Offsets Custom
+ */
+* + .offset-custom-1 { margin-top: 12px; }
+
+* + .offset-custom-2 { margin-top: 17px; }
+
+* + .offset-custom-4 { margin-top: 25px; }
+
+* + .offset-custom-5 { margin-top: 18px; }
+
+* + .offset-custom-9 { margin-top: 15px; }
+
+* + .offset-custom-10 { margin-top: 15px; }
+
+
+
+
+@include media-breakpoint-up(lg) {
+
+	* + .offset-custom-1 { margin-top: 20px; }
+
+	* + .offset-custom-2 { margin-top: 30px; }
+
+	* + .offset-custom-8 { margin-top: 22px; }
+
+	* + .offset-top-2 { margin-top: 50px; }
+
+	* + .offset-lg-top-90 { margin-top: 90px; }
+
+	* + .offset-custom-8 { margin-top: 94px; }
+
+	* + .offset-custom-9 { margin-top: 23px; }
+
+	* + .offset-custom-10 { margin-top: 51px; }
+
+}
+
+@include media-breakpoint-up(xl) {
+
+	* + .offset-custom-1 { margin-top: 27px; }
+
+	* + .offset-custom-2 { margin-top: 70px; }
+
+	html	* + .offset-custom-3 { margin-top: 67px; }
+
+	* + .offset-custom-4 { margin-top: 45px; }
+
+	* + .offset-custom-5 { margin-top: 34px; }
+
+	html * + .offset-custom-6 { margin-top: 83px; }
+
+	.offset-custom-7 { margin-top: 10px; }
+
+  * + .offset-custom-9 { margin-top: 62px; }
+
+
+
+
+	* + .offset-xl-top-38 {
+		margin-top: 38px;
+	}
+
+	* + .offset-xl-top-33 {
+			margin-top: 33px;
+		}
+
+	html * + .offset-xl-top-52 {
+			margin-top: 52px;
+		}
+
+	* + .offset-xl-top-29 { margin-top: 29px; }
+
+	* + .offset-xl-top-30 { margin-top: 30px; }
+
+	* + .offset-top-1 { margin-top: 50px; }
+
+	html * + .offset-xl-top-60 { margin-top: 60px; }
+
+	html * + .offset-xl-top-70 { margin-top: 70px; }
+
+	* + .offset-xl-top-90 { margin-top: 90px; }
+
+	.offset-xl-left--155 {
+		margin-left: -155px;
+	}
+
+	html * + .offset-xl-top-72 {
+		margin-top: 72px;
+	}
+}

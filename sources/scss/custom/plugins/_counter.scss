@@ -1,0 +1,127 @@
+/** @section Counter */
+
+// Box Counter
+.box-counter {
+	position: relative;
+	text-align: center;
+}
+
+.box-counter + * {
+	margin-top: 4px;
+}
+
+.box-counter-title {
+}
+
+.box-counter-main {
+	display: flex;
+	justify-content: center;
+
+	> * {
+		display: inline;
+	}
+
+	.small { font-size: 28px; }
+
+	.small_top {
+		position: relative;
+		top: .2em;
+		vertical-align: top;
+	}
+}
+
+* + .box-counter-main {
+	margin-top: 5px;
+
+	// Medium ≥ 576px
+	@include media-breakpoint-up(sm) {
+		margin-top: 12px;
+	}
+}
+
+
+// Counter Corporate
+.counter-corporate {
+	.box-counter-main {
+		letter-spacing: -.07em;
+
+		// Mega large ≥ 1600px
+		@include media-breakpoint-up(xxl) {
+			font-size: 110px;
+		}
+	}
+}
+
+
+// Counter App
+.counter-app {
+
+	@include media-breakpoint-up(lg) {
+		display: flex;
+		flex-direction: row-reverse;
+		align-items: center;
+		justify-content: center;
+		@include group(15px);
+
+		.box-counter-title {
+			margin-top: 23px;
+		}
+	}
+}
+
+
+// Counter Classic
+.counter-classic {
+	text-align: center;
+	padding: 28px 15px 35px;
+	width: 170px;
+	margin-left: auto;
+	margin-right: auto;
+	border: 2px solid $white;
+	background: $white;
+	box-shadow: $shadow-2;
+}
+
+.counter-classic-icon {
+	path {
+		fill: $gray-700;
+	}
+
+	.path-primary {
+		fill: $primary;
+	}
+}
+
+.counter-classic-number {
+	font-size: 50px;
+	line-height: 1.1;
+	font-weight: 700;
+	font-family: $font-family-sec;
+	color: $primary;
+}
+
+// Offsets
+* + .counter-classic-title { margin-top: 18px; }
+* + .counter-classic-number { margin-top: 0; }
+
+// Context
+%context-dark {
+
+	.counter-classic {
+		background: transparent;
+	}
+
+	.counter-classic-number {
+		color: inherit;
+	}
+
+	.counter-classic-icon {
+		path {
+			fill: $white;
+		}
+
+		.path-primary {
+			fill: transparent;
+		}
+	}
+}

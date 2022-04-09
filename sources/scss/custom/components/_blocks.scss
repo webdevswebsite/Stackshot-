@@ -1,0 +1,60 @@
+/** @section Blocks */
+
+
+// Block center
+%block-center {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.block-center {
+	@extend %block-center;
+}
+// Block Lg
+
+.block-sm {
+	max-width: 280px;
+}
+
+.block-md {
+	max-width: 390px;
+}
+
+.block-lg {
+	max-width: 500px;
+}
+
+.block-xl {
+	max-width: 610px;
+}
+
+.block-xxl {
+	max-width: 830px;
+	@extend %block-center;
+}
+
+.block-3 {
+	max-width: 800px;
+	@extend %block-center;
+}
+
+@include media-breakpoint-down(xs) {
+  .block-1 {
+		max-width: 330px;
+	}
+}
+
+@include media-breakpoint-down(sm) {
+	.block-2 {
+		max-width: 330px;
+		margin-left: auto;
+	}
+}
+
+@include media-breakpoint-up(lg) {
+   .block-4 {
+		 max-width: 390px;
+	 }
+}
+
+

@@ -1,0 +1,104 @@
+/** @section Links */
+
+// Standard link style
+a {
+	transition: $transition-base;
+
+	&,
+	&:focus,
+	&:active,
+	&:hover {
+		text-decoration: $link-decoration;
+	}
+
+	@include link($link-color, $link-hover-color);
+
+	&[href*='tel'],
+	&[href*='mailto'] {
+		white-space: nowrap;
+	}
+}
+
+.link-hover {
+	color: $link-hover-color;
+}
+
+.link-press {
+	color: $link-press-color;
+}
+
+.link-img {
+	display: flex;
+	overflow: hidden;
+	background-color: $primary;
+
+	&:hover {
+
+		img {
+			opacity: .85;
+			transform: scale(1.025);
+		}
+	}
+
+	img {
+		transition: $transition-base;
+	}
+}
+
+.link-border {
+	color: inherit;
+	border-bottom: 2px solid rgba($secondary, .4);
+
+	&:hover {
+		color: $secondary;
+		border-color: $secondary;
+	}
+}
+
+.link-border-2 {
+	color: $primary;
+	border-color: rgba($primary, .4);
+
+	&:hover {
+		color: $primary;
+		border-color: $primary;
+	}
+}
+
+.link-arrow {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	vertical-align: middle;
+	color: $white;
+	font-weight: 500;
+	&:hover, &:focus, &:active {
+		color: rgba($white, .6);
+	}
+	span {
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+		color: inherit;
+		line-height: 1em;
+	}
+
+	&-right {
+		flex-direction: row-reverse;
+		span {
+			padding-left: 4px;
+		}
+	}
+}
+
+.link-arrow-primary {
+	color: $primary;
+}
+
+.link-small {
+	font-size: 15px;
+}
+
+.link-white {
+	@include link($white, rgba($white, .6));
+}

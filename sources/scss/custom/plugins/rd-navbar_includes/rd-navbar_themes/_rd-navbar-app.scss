@@ -1,0 +1,87 @@
+/**
+*
+* RD Navbar App
+* =====================================================
+*/
+.rd-navbar-app {
+	background-color: $primary-5;
+	@extend %context-dark;
+
+	.rd-navbar-toggle,
+	.rd-navbar-collapse-toggle {
+		color: $white;
+
+		span {
+			&,
+			&::before,
+			&::after {
+				background-color: $white;
+			}
+		}
+	}
+
+	.rd-nav-link {
+
+		&,
+		&:not([href]) {
+			color: $white;
+		}
+	}
+
+	// Fixed
+	&.rd-navbar-fixed {
+		.rd-navbar-nav-wrap {
+			background-color: $primary-5;
+		}
+
+		.rd-nav-item {
+
+			&:hover,
+			&.active {
+				.rd-nav-link {
+					background-color: transparent;
+					color: $primary;
+				}
+			}
+		}
+
+		.rd-navbar-dropdown {
+			li {
+
+				&:hover,
+				&.active {
+					> a {
+						background-color: transparent;
+						color: $primary;
+					}
+				}
+			}
+		}
+
+		.rd-navbar-panel {
+			background-color: $primary-5;
+			box-shadow: 0 0 25px rgba($gray-600, .15);
+		}
+
+		.rd-navbar-collapse {
+			box-shadow: 0 0 25px rgba($gray-600, .15);
+		}
+	}
+
+	// Static
+	&.rd-navbar-static {
+		&:not(.rd-navbar--is-stuck) {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			z-index: $zindex-rd-navbar;
+			background-color: transparent;
+		}
+
+		&.rd-navbar--is-stuck,
+		&.rd-navbar--is-clone {
+			box-shadow: 0 0 25px rgba($gray-600, .15);
+		}
+	}
+}
